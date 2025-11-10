@@ -2,9 +2,10 @@
 
 
 ## New Version
-> Completely local RAG with chat UI
-
+> With two option
 ![RagBase Interface](./images/image1.png)
+
+> Generate,Preview PDF file with wikipedia content
 ![RagBase Interface](./images/image2.png)
 
 ## Demo
