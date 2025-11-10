@@ -45,37 +45,46 @@ poetry run streamlit run app.py
 
 ## Architecture
 
-<a href="https://www.mlexpert.io/bootcamp" target="_blank">
-  <img src="https://raw.githubusercontent.com/curiousily/ragbase/master/.github/architecture.png">
-</a>
-
 ### Ingestor
-
-Extracts text from PDF documents and creates chunks (using semantic and character splitter) that are stored in a vector databse
+- Extracts text from PDF documents.
+- Splits text into semantic chunks.
+- Stores embeddings in a vector database for semantic search.
 
 ### Retriever
-
-Given a query, searches for similar documents, reranks the result and applies LLM chain filter before returning the response.
+- Searches for similar documents given a query.
+- Re-ranks results and applies an LLM chain filter.
+- Returns the most relevant passages for the question.
 
 ### QA Chain
+- Combines LLM with retriever.
+- Allows conversational Q&A over your documents.
 
-Combines the LLM with the retriever to answer a given user question
+### Wikipedia Search
+- Summarizes user input for search queries.
+- Fetches top Wikipedia results.
+- Handles disambiguation and topic selection.
+- Generates PDF summaries from results.
 
 ## Tech Stack
 
-- [Ollama](https://ollama.com/) - run local LLM
-- [Groq API](https://groq.com/) - fast inference for mutliple LLMs
+- [Ollama](https://ollama.com/) - local LLM server
+- [Groq API](https://groq.com/) - optional fast inference for LLMs
 - [LangChain](https://www.langchain.com/) - build LLM-powered apps
 - [Qdrant](https://qdrant.tech/) - vector search/database
-- [FlashRank](https://github.com/PrithivirajDamodaran/FlashRank) - fast reranking
-- [FastEmbed](https://qdrant.github.io/fastembed/) - lightweight and fast embedding generation
-- [Streamlit](https://streamlit.io/) - build UI for data apps
+- [Streamlit](https://streamlit.io/) - interactive web UI
 - [PDFium](https://pdfium.googlesource.com/pdfium/) - PDF processing and text extraction
 
-## Add Groq API Key (Optional)
+## Usage
 
-You can also use the Groq API to replace the local LLM, for that you'll need a `.env` file with Groq API key:
+1. Upload a PDF or enter text in the app.
+2. For PDFs: preview, ask questions, and get answers.
+3. For text: fetch top Wikipedia summaries, handle disambiguation, and download PDFs.
+4. Chat interface works with PDF uploads for interactive Q&A.
+
+## Optional: Groq API Key
+
+Replace local LLM with Groq API for inference. Add a `.env` file with:
 
 ```sh
-GROQ_API_KEY=YOUR API KEY
+GROQ_API_KEY=YOUR_API_KEY
 ```

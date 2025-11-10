@@ -19,6 +19,8 @@ streamlit = "^1.36.0"
 python-dotenv = "^1.0.1"
 langchain-groq = "^0.1.6"
 pdfplumber = "^0.11.7"
+reportlab = "^4.4.4"
+wikipedia = "^1.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
