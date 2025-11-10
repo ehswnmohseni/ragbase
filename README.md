@@ -1,10 +1,11 @@
 # RagBase - Private Chat with Your Documents
 
+
+## New Version
 > Completely local RAG with chat UI
 
-<a href="https://www.mlexpert.io/bootcamp" target="_blank">
-  <img src="https://raw.githubusercontent.com/curiousily/ragbase/master/.github/ui.png">
-</a>
+![RagBase Interface](./images/image1.png)
+![RagBase Interface](./images/image2.png)
 
 ## Demo
 
